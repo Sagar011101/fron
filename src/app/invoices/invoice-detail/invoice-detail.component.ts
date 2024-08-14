@@ -4,22 +4,16 @@ import { InvoiceService } from '../invoice.service';
 
 // Define an interface for the invoice to improve type safety
 interface Invoice {
-  user: {
-    name: string;
-    email: string;
-    address: string;
-  };
-  usage: {
-    number_of_e_signatures: number;
-    number_of_stamp_papers: number;
-  };
-  charges: {
-    unit_price: number;
-    total_amount: number;
-  };
-  invoiceDate: string;
-  dueDate: string;
-  paymentInstructions: string;
+  client_name: string;
+  client_email: string;
+  client_address: string;
+  e_signatures_used: number;
+  stamp_papers_procured: number;
+  unit_price: number;
+  total_amount: number;
+  invoice_date: string;
+  due_date: string;
+  payment_instructions: string;
 }
 
 @Component({

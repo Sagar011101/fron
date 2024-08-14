@@ -36,13 +36,13 @@ export class InvoiceListComponent implements OnInit {
 
         this.invoices = data.map(invoice => {
           // Ensure user and charges objects are initialized
-          if (!invoice.user) {
-            console.warn(`Invoice with ID ${invoice.invoice_id} is missing user data`);
-            invoice.user = { name: 'Unknown', email: '', address: '' }; // Provide default values
+          if (!invoice) {
+            console.warn(`Invoice with ID ${invoice} is missing user data`);
+            //invoice = { name: 'Unknown', email: '', address: '' }; // Provide default values
           }
-          if (!invoice.charges) {
-            console.warn(`Invoice with ID ${invoice.invoice_id} is missing charges`);
-            invoice.charges = { unit_price: 0, total_amount: 0 }; // Provide default values
+          if (!invoice) {
+            console.warn(`Invoice with ID ${invoice} is missing charges`);
+            //invoice.charges = { unit_price: 0, total_amount: 0 }; // Provide default values
           }
           return invoice;
         });

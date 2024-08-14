@@ -2,14 +2,14 @@
 <button (click)="goBack()">Back</button>
 
 <div *ngIf="invoice">
-  <p><strong>Name:</strong> {{ invoice.user.name }}</p>
-  <p><strong>Email:</strong> {{ invoice.user.email }}</p>
-  <p><strong>Address:</strong> {{ invoice.user.address }}</p>
-  <p><strong>E-Signatures Used:</strong> {{ invoice.usage.number_of_e_signatures }}</p>
-  <p><strong>Stamp Papers Procured:</strong> {{ invoice.usage.number_of_stamp_papers }}</p>
-  <p><strong>Unit Price:</strong> {{ invoice.charges.unit_price }}</p>
-  <p><strong>Total Amount:</strong> {{ invoice.charges.total_amount }}</p>
-  <p><strong>Invoice Date:</strong> {{ invoice.invoiceDate | date }}</p>
-  <p><strong>Due Date:</strong> {{ invoice.dueDate | date }}</p>
-  <p><strong>Payment Instructions:</strong> {{ invoice.paymentInstructions }}</p>
+  <p><strong>Name:</strong> {{ invoice?.client_name }}</p>
+  <p><strong>Email:</strong> {{ invoice?.client_email }}</p>
+  <p><strong>Address:</strong> {{ invoice?.client_address }}</p>
+  <p><strong>E-Signatures Used:</strong> {{ invoice?.e_signatures_used }}</p>
+  <p><strong>Stamp Papers Procured:</strong> {{ invoice?.stamp_papers_procured }}</p>
+  <p><strong>Unit Price:</strong> {{ invoice?.unit_price}}</p>
+  <p><strong>Total Amount:</strong> {{ invoice?.total_amount }}</p>
+  <p><strong>Invoice Date:</strong> {{ invoice?.invoice_date}}</p>
+  <p><strong>Due Date:</strong> {{ invoice?.due_date}}</p>
+  <p><strong>Payment Instructions:</strong> {{ invoice?.payment_instructions}}</p>
 </div>

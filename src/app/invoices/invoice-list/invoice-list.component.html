@@ -29,15 +29,10 @@
   <tbody>
     <tr *ngFor="let invoice of invoices" (click)="viewInvoice(invoice.invoice_id)">
       <td>{{ invoice.invoice_id }}</td>
-      <td>{{ invoice.user.name || 'N/A' }}</td>
-      <td>{{ invoice.invoiceDate | date:'shortDate' || 'N/A' }}</td>
-      <td>{{ invoice.dueDate | date:'shortDate' || 'N/A' }}</td>
-      <td>
-        <ng-container *ngIf="invoice.charges; else noCharges">
-          {{ invoice.charges.total_amount | currency }}
-        </ng-container>
-        <ng-template #noCharges>N/A</ng-template>
-      </td>
+      <td>{{ invoice.client_name || 'N/A' }}</td>
+      <td>{{ invoice.invoice_date || 'N/A' }}</td>
+      <td>{{ invoice.due_date || 'N/A' }}</td>
+      <td>{{ invoice.total_amount || 'N/A' }}</td>
     </tr>
   </tbody>
 </table>

@@ -8,7 +8,7 @@ import { Invoice } from './invoice-list/invoice.model'; // Adjust the path if ne
   providedIn: 'root'
 })
 export class InvoiceService {
-  private baseUrl = 'http://127.0.0.1:5000'; // Your actual API URL
+  private baseUrl = 'http://127.0.0.1:9999'; // Your actual API URL
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class InvoiceService {
   }
 
   getInvoices(): Observable<Invoice[]> {
-    return this.http.get<Invoice[]>(`${this.baseUrl}/invoices/get-invoices`)
+    return this.http.get<Invoice[]>(`${this.baseUrl}/invoices/list-invoices`)
       .pipe(catchError(this.handleError));
   }
 
