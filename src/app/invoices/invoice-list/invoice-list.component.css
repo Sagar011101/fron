@@ -1,0 +1,29 @@
+/* Invoice List Component Styles */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+  }
+  
+  table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+  

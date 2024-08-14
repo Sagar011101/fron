@@ -1,0 +1,43 @@
+<h2>Invoice List</h2>
+<button (click)="goBack()">Back</button>
+
+<!-- Filter Options -->
+<button (click)="toggleFilterOptions()">Filter</button>
+<div *ngIf="showFilterOptions">
+  <form [formGroup]="filterForm" (ngSubmit)="applyFilter()">
+    <label for="filterType">Filter By:</label>
+    <select id="filterType" formControlName="filterType">
+      <option value="invoice_id">Invoice ID</option>
+      <option value="dueDate">Due Date</option>
+      <option value="invoiceDate">Invoice Date</option>
+    </select>
+    <input formControlName="filterValue" placeholder="Enter filter value" />
+    <button type="submit">Apply Filter</button>
+  </form>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Client Name</th>
+      <th>Invoice Date</th>
+      <th>Due Date</th>
+      <th>Total Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let invoice of invoices" (click)="viewInvoice(invoice.invoice_id)">
+      <td>{{ invoice.invoice_id }}</td>
+      <td>{{ invoice.user.name || 'N/A' }}</td>
+      <td>{{ invoice.invoiceDate | date:'shortDate' || 'N/A' }}</td>
+      <td>{{ invoice.dueDate | date:'shortDate' || 'N/A' }}</td>
+      <td>
+        <ng-container *ngIf="invoice.charges; else noCharges">
+          {{ invoice.charges.total_amount | currency }}
+        </ng-container>
+        <ng-template #noCharges>N/A</ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,60 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="invoiceForm">
+  <div formGroupName="user">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name">
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email">
+    </div>
+
+    <div>
+      <label for="address">Address:</label>
+      <input id="address" formControlName="address">
+    </div>
+  </div>
+
+  <div formGroupName="usage">
+    <div>
+      <label for="number_of_e_signatures">Signatures Used:</label>
+      <input id="number_of_e_signatures" type="number" formControlName="number_of_e_signatures">
+    </div>
+
+    <div>
+      <label for="number_of_stamp_papers">Stamp Papers Procured:</label>
+      <input id="number_of_stamp_papers" type="number" formControlName="number_of_stamp_papers">
+    </div>
+  </div>
+
+  <div formGroupName="charges">
+    <div>
+      <label for="unit_price">Unit Price:</label>
+      <input id="unit_price" type="number" formControlName="unit_price">
+    </div>
+
+    <div>
+      <label for="total_amount">Total Amount:</label>
+      <input id="total_amount" type="number" formControlName="total_amount">
+    </div>
+  </div>
+
+  <div>
+    <label for="invoiceDate">Invoice Date:</label>
+    <input id="invoiceDate" type="date" formControlName="invoiceDate">
+  </div>
+
+  <div>
+    <label for="dueDate">Due Date:</label>
+    <input id="dueDate" type="date" formControlName="dueDate">
+  </div>
+
+  <div>
+    <label for="paymentInstructions">Payment Instructions:</label>
+    <textarea id="paymentInstructions" formControlName="paymentInstructions"></textarea>
+  </div>
+
+  <button type="submit" [disabled]="!invoiceForm.valid">Create Invoice</button>
+  <button type="button" (click)="goBack()">Back</button>
+</form>

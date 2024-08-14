@@ -1,0 +1,19 @@
+/* Invoice Detail Component Styles */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  
+  strong {
+    display: inline-block;
+    width: 200px;
+  }
+  

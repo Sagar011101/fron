@@ -1,0 +1,15 @@
+<h2>Invoice Details</h2>
+<button (click)="goBack()">Back</button>
+
+<div *ngIf="invoice">
+  <p><strong>Name:</strong> {{ invoice.user.name }}</p>
+  <p><strong>Email:</strong> {{ invoice.user.email }}</p>
+  <p><strong>Address:</strong> {{ invoice.user.address }}</p>
+  <p><strong>E-Signatures Used:</strong> {{ invoice.usage.number_of_e_signatures }}</p>
+  <p><strong>Stamp Papers Procured:</strong> {{ invoice.usage.number_of_stamp_papers }}</p>
+  <p><strong>Unit Price:</strong> {{ invoice.charges.unit_price }}</p>
+  <p><strong>Total Amount:</strong> {{ invoice.charges.total_amount }}</p>
+  <p><strong>Invoice Date:</strong> {{ invoice.invoiceDate | date }}</p>
+  <p><strong>Due Date:</strong> {{ invoice.dueDate | date }}</p>
+  <p><strong>Payment Instructions:</strong> {{ invoice.paymentInstructions }}</p>
+</div>
